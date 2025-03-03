@@ -1,26 +1,52 @@
-const express = require("express");
+const express = require("express"); 
 const app = express();
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
+const dotenv = require('dotenv'); 
 const cors = require("cors");
 dotenv.config();
-const PORT = process.env.PORT ||5000;
+
+const PORT = process.env.PORT || 5000; 
+
+ // MongoDB connection string with credentials
 const mongooseURI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.vqva6ft.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-mongoose.connect(mongooseURI);
 
-// middleware
-app.use(cors(
-    { origin: "http://localhost:5173",
-     credentials: true
+mongoose.connect(mongooseURI) 
+
+.then(()=>{
+
+    // Log message indicating successful connection to MongoDB
+    console.log("MongoDB connected"); 
+
+ })
+.catch((err)=>{ 
+
+    console.log(err); 
+
+ });
+
+ // Middleware setup
+
+app.use(cors( 
+
+    { origin: "http://localhost:5173", 
+
+     credentials: true 
+
     })
- );
- app.use(express.json());
+ ); 
+ app.use(express.json()); 
 
-// base route
-app.get("/", (req,res)=>{
-    res.send('App is running');
+
+ // Base route definition
+
+app.get("/", (req,res)=>{ 
+
+    res.send('App is running'); 
+
 })
 
-app.listen(PORT,()=>{
-    console.log(`Server is running on port ${PORT}`);
+app.listen(PORT,()=>{ 
+    // Log message indicating the server is running
+    console.log(`Server is running on port ${PORT}`); 
+
 })
