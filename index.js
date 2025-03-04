@@ -21,6 +21,9 @@ mongoose.connect(mongooseURI)
     // User related routes
     app.use('/users', userRoutes);
 
+    // Quiz related routes
+    app.use('/quizzes', )
+
     
 
  })
