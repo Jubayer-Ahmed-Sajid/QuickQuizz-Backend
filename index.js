@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv'); 
 const cors = require("cors");
 dotenv.config();
+const userRoutes = require('./Routes/userRoutes');
 
 const PORT = process.env.PORT || 5000; 
 
@@ -16,6 +17,11 @@ mongoose.connect(mongooseURI)
 
     // Log message indicating successful connection to MongoDB
     console.log("MongoDB connected"); 
+
+    // User related routes
+    app.use('/users', userRoutes);
+
+    
 
  })
 .catch((err)=>{ 
