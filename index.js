@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const cors = require("cors");
 dotenv.config();
 const userRoutes = require('./Routes/userRoutes');
+const quizzRoutes = requir('./Routes/quizzRoutes');
 
 const PORT = process.env.PORT || 5000; 
 
@@ -22,7 +23,10 @@ mongoose.connect(mongooseURI)
     app.use('/users', userRoutes);
 
     // Quiz related routes
-    app.use('/quizzes', )
+    app.use('/quizzes', quizzRoutes);
+
+    // questions related routes
+    app.use('/questions', questionRoutes);
 
     
 
