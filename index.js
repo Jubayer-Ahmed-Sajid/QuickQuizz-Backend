@@ -20,6 +20,10 @@ mongoose.connect(mongooseURI)
     // Log message indicating successful connection to MongoDB
     console.log("MongoDB connected"); 
 
+    // Authentication routes
+    app.use('/auth', authRoutes);
+    
+
     // User related routes
     app.use('/users', userRoutes);
 
