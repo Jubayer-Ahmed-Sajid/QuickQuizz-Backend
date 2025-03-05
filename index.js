@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv'); 
 const cors = require("cors");
+const jwt = require('jsonwebtoken');
 dotenv.config();
 const userRoutes = require('./Routes/userRoutes');
 const quizzRoutes = requir('./Routes/quizzRoutes');
@@ -25,7 +26,7 @@ mongoose.connect(mongooseURI)
     // Quiz related routes
     app.use('/quizzes', quizzRoutes);
 
-    // questions related routes
+    // Questions related routes
     app.use('/questions', questionRoutes);
 
     
