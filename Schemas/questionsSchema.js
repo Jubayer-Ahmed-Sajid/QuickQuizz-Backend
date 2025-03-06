@@ -15,4 +15,4 @@ const questionsSchema = new Schema({
         required:true
     }
 })
-module.exports = questionsSchema;
+module.exports = {questionsSchema};

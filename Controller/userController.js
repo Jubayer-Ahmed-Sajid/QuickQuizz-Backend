@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const { userSchema } = require("../Schemas/usersSchema");
-const User = new mongoose.model("User", userSchema);
+const { usersSchema } = require("../Schemas/usersSchema");
+const User = new mongoose.model("User", usersSchema);
 
 // get all users
 const getUsers = async (req, res) => {
@@ -39,4 +39,5 @@ const getUserById =async(req,rs)=>{
 module.exports = {
   getUsers,
   createUser,
+  getUserById
 };

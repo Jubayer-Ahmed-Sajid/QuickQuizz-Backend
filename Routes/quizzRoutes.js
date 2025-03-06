@@ -7,4 +7,4 @@ router.post("/", createQuizz);
 router.get("/:id", getQuizzById);
 router.put("/:id", updateQuizz);
 router.delete("/:id", deleteQuizz);
-
+module.exports = router;

@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 const { array } = require('joi');
-const usersSchema = new Schema({
+const usersSchema = new mongoose.Schema({
     name:{
         type:String,
         required:true
@@ -19,4 +18,4 @@ const usersSchema = new Schema({
         default:[]
     }
 })
-module.exports = usersSchema;
+module.exports = {usersSchema};

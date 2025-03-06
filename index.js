@@ -3,11 +3,13 @@ const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv'); 
 const cors = require("cors");
+
 const jwt = require('jsonwebtoken');
 dotenv.config();
 const userRoutes = require('./Routes/userRoutes');
-const quizzRoutes = requir('./Routes/quizzRoutes');
-
+const quizzRoutes = require('./Routes/quizzRoutes');
+const authRoutes = require('./Routes/authRoutes');
+const questionRoutes = require('./Routes/questionRoutes')
 const PORT = process.env.PORT || 5000; 
 
 // MongoDB connection string with credentials
